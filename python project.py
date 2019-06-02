@@ -1,4 +1,5 @@
 import discord
+import os
 
 client = discord.Client()
 
@@ -28,4 +29,5 @@ async def on_message(message):
         pic = message.content.split(" ")[1]
         await message.channel.send(file=discord.File(pic))
 
-client.run("NTg0Mjg2ODQ3Mzc5NzAxNzkw.XPNQxQ.CurdXhxhkG50rq4f0L051-FC5GA")
+        access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
